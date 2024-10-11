@@ -3,6 +3,7 @@ package br.org.serratec.trabalho.biblioteca.domain;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -17,7 +18,7 @@ public class Livro {
     @Column(nullable = false, length = 50)
     private String titulo;
 
-
+    @NotNull(message = "Digite a quantidade de páginas do livro.")
     @Column
     private Integer qtdPaginas;
 
